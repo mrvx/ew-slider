@@ -9,8 +9,6 @@
    License: GPL2
    */
 
-
-
    function ew_slider() {
   register_post_type( 'Slaidid',
                      array(
@@ -47,4 +45,10 @@ function slaidirubriik_taxonomy() {
 add_action( 'init', 'slaidirubriik_taxonomy' );
 
 
+
+
+?>
+
+<?php
+include( plugin_dir_path( __FILE__ ) . 'slider_template.php');
 ?>
