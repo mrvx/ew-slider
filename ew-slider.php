@@ -51,4 +51,5 @@ add_action( 'init', 'slaidirubriik_taxonomy' );
 
 <?php
 include( plugin_dir_path( __FILE__ ) . 'slider_template.php');
+include( plugin_dir_path( __FILE__ ) . 'acf-fields.php');
 ?>
