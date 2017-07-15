@@ -1,4 +1,7 @@
+
 <?php  
+
+
 
 function ew_slider_shortcode( $atts, $content = null ) {
 

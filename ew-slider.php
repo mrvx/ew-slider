@@ -50,10 +50,20 @@ add_action( 'init', 'slaidirubriik_taxonomy' );
 ?>
 
 <?php
-include( plugin_dir_path( __FILE__ ) . 'slider_template.php');
-include( plugin_dir_path( __FILE__ ) . 'acf-fields.php');
-include( plugin_dir_path( __FILE__ ) . 'owl-carousel/owl.carousel.css');
-include( plugin_dir_path( __FILE__ ) . 'owl-carousel/owl.theme.css');
-include( plugin_dir_path( __FILE__ ) . 'owl-carousel/owl.carousel.min.js');
-include( plugin_dir_path( __FILE__ ) . 'owl-carousel/owl.scripts.js');
+
+define( 'EW_URL', plugins_url( '', __FILE__ ) );
+define( 'EW_DIR', plugin_dir_path( __FILE__ ) );
+
+include( EW_DIR. 'slider_template.php');
+include( EW_DIR. 'acf-fields.php');
+
+
+wp_enqueue_style( 'owlcarouselcss', EW_URL.'/owl-carousel/owl.carousel.min.css');
+wp_enqueue_style( 'owlthemecss', EW_URL .  '/owl-carousel/owl.theme.default.css');
+
+wp_enqueue_script( 'jquery' );
+wp_enqueue_script( 'owljs', EW_URL .  '/owl-carousel/owl.carousel.min.js' );
+wp_enqueue_script( 'owl-script-js', EW_URL . '/owl-carousel/owl.script.js');
+
+
 ?>
