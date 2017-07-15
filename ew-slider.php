@@ -52,4 +52,8 @@ add_action( 'init', 'slaidirubriik_taxonomy' );
 <?php
 include( plugin_dir_path( __FILE__ ) . 'slider_template.php');
 include( plugin_dir_path( __FILE__ ) . 'acf-fields.php');
+include( plugin_dir_path( __FILE__ ) . 'owl-carousel/owl.carousel.css');
+include( plugin_dir_path( __FILE__ ) . 'owl-carousel/owl.theme.css');
+include( plugin_dir_path( __FILE__ ) . 'owl-carousel/owl.carousel.min.js');
+include( plugin_dir_path( __FILE__ ) . 'owl-carousel/owl.scripts.js');
 ?>
