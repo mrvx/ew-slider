@@ -4,3 +4,5 @@
 * teksti lisamine template panna
 * piltide joondamine
 * jne jne
+* jne jne
+* veel midgai
