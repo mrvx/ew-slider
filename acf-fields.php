@@ -1,11 +1,28 @@
 <?php 
 
+
 if( function_exists('acf_add_local_field_group') ):
 
 acf_add_local_field_group(array (
 	'key' => 'group_5947e7a25e583',
 	'title' => '[:en]EW slider[:et]Slaider[:]',
 	'fields' => array (
+		array (
+			'key' => 'field_597608495cb13',
+			'label' => 'Pilt',
+			'name' => '',
+			'type' => 'tab',
+			'instructions' => '',
+			'required' => 0,
+			'conditional_logic' => 0,
+			'wrapper' => array (
+				'width' => '',
+				'class' => '',
+				'id' => '',
+			),
+			'placement' => 'top',
+			'endpoint' => 0,
+		),
 		array (
 			'key' => 'field_5947e7ae7c6d2',
 			'label' => 'pilt',
@@ -49,6 +66,101 @@ acf_add_local_field_group(array (
 			'media_upload' => 1,
 			'delay' => 0,
 		),
+		array (
+			'key' => 'field_597604d05d19e',
+			'label' => 'Rohkem valikuid',
+			'name' => '',
+			'type' => 'tab',
+			'instructions' => '',
+			'required' => 0,
+			'conditional_logic' => 0,
+			'wrapper' => array (
+				'width' => '',
+				'class' => '',
+				'id' => '',
+			),
+			'placement' => 'top',
+			'endpoint' => 0,
+		),
+		array (
+			'key' => 'field_597605df5d19f',
+			'label' => 'Pildi joondus',
+			'name' => 'pildi_joondus',
+			'type' => 'select',
+			'instructions' => '',
+			'required' => 0,
+			'conditional_logic' => 0,
+			'wrapper' => array (
+				'width' => '15',
+				'class' => '',
+				'id' => '',
+			),
+			'choices' => array (
+				'left top' => 'üleval vasak',
+				'right top' => 'üleval parem',
+				'left bottom' => 'all vasakul',
+				'right bottom' => 'paremal all',
+				'center center' => 'Keskel',
+			),
+			'default_value' => array (
+				0 => 'center center',
+			),
+			'allow_null' => 0,
+			'multiple' => 0,
+			'ui' => 0,
+			'ajax' => 0,
+			'return_format' => 'value',
+			'placeholder' => '',
+		),
+		array (
+			'key' => 'field_597607466fecc',
+			'label' => 'Teksti joondus',
+			'name' => 'teksti_joondus',
+			'type' => 'select',
+			'instructions' => '',
+			'required' => 0,
+			'conditional_logic' => 0,
+			'wrapper' => array (
+				'width' => '15',
+				'class' => '',
+				'id' => '',
+			),
+			'choices' => array (
+				'lefttop' => 'üleval vasak',
+				'righttop' => 'üleval parem',
+				'leftbottom' => 'all vasakul',
+				'rightbottom' => 'paremal all',
+				'centercenter' => 'Keskel',
+			),
+			'default_value' => array (
+				0 => 'centercenter',
+			),
+			'allow_null' => 0,
+			'multiple' => 0,
+			'ui' => 0,
+			'ajax' => 0,
+			'return_format' => 'value',
+			'placeholder' => '',
+		),
+		array (
+			'key' => 'field_597608e3715f3',
+			'label' => 'Klass',
+			'name' => 'klass',
+			'type' => 'text',
+			'instructions' => '',
+			'required' => 0,
+			'conditional_logic' => 0,
+			'wrapper' => array (
+				'width' => '15',
+				'class' => '',
+				'id' => '',
+			),
+			'default_value' => '',
+			'placeholder' => '',
+			'prepend' => '',
+			'append' => '',
+			'maxlength' => '',
+		),
 	),
 	'location' => array (
 		array (
@@ -85,5 +197,111 @@ acf_add_local_field_group(array (
 	'description' => '',
 ));
 
+acf_add_local_field_group(array (
+	'key' => 'group_597627a4a2621',
+	'title' => 'Slaideri sätted',
+	'fields' => array (
+		array (
+			'key' => 'field_597627ae4efca',
+			'label' => 'Slaidi vahetamise kiirus',
+			'name' => 'slaidi_vahetamise_kiirus',
+			'type' => 'number',
+			'instructions' => 'Millisekundites nt 8000',
+			'required' => 0,
+			'conditional_logic' => 0,
+			'wrapper' => array (
+				'width' => '25',
+				'class' => '',
+				'id' => '',
+			),
+			'default_value' => 8000,
+			'placeholder' => '',
+			'prepend' => '',
+			'append' => '',
+			'min' => '',
+			'max' => '',
+			'step' => 1000,
+		),
+		array (
+			'key' => 'field_597627e4845aa',
+			'label' => 'Luba slaidivahetuse nupud',
+			'name' => 'luba_slaidivahetus_nupud',
+			'type' => 'true_false',
+			'instructions' => '',
+			'required' => 0,
+			'conditional_logic' => 0,
+			'wrapper' => array (
+				'width' => '25',
+				'class' => '',
+				'id' => '',
+			),
+			'message' => '',
+			'default_value' => 0,
+			'ui' => 1,
+			'ui_on_text' => 'Jah',
+			'ui_off_text' => 'Ei',
+		),
+		array (
+			'key' => 'field_59762860845ab',
+			'label' => 'Luba slaidivahetuse nooled',
+			'name' => 'luba_slaidivahetus_nooled',
+			'type' => 'true_false',
+			'instructions' => '',
+			'required' => 0,
+			'conditional_logic' => 0,
+			'wrapper' => array (
+				'width' => '25',
+				'class' => '',
+				'id' => '',
+			),
+			'message' => '',
+			'default_value' => 0,
+			'ui' => 1,
+			'ui_on_text' => 'Jah',
+			'ui_off_text' => 'Ei',
+		),
+		array (
+			'key' => 'field_597628a6845ac',
+			'label' => 'Slaideri kõrgus',
+			'name' => 'slaideri_korgus',
+			'type' => 'number',
+			'instructions' => 'Protsentides',
+			'required' => 0,
+			'conditional_logic' => 0,
+			'wrapper' => array (
+				'width' => '25',
+				'class' => '',
+				'id' => '',
+			),
+			'default_value' => 30,
+			'placeholder' => '',
+			'prepend' => '',
+			'append' => '',
+			'min' => '',
+			'max' => '',
+			'step' => '',
+		),
+	),
+	'location' => array (
+		array (
+			array (
+				'param' => 'options_page',
+				'operator' => '==',
+				'value' => 'acf-options-slaideri-satted',
+			),
+		),
+	),
+	'menu_order' => 0,
+	'position' => 'normal',
+	'style' => 'default',
+	'label_placement' => 'top',
+	'instruction_placement' => 'label',
+	'hide_on_screen' => '',
+	'active' => 1,
+	'description' => '',
+));
+
 endif;
+
+
 ?>

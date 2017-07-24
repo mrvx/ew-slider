@@ -45,6 +45,19 @@ function slaidirubriik_taxonomy() {
 add_action( 'init', 'slaidirubriik_taxonomy' );
 
 
+/**
+ * Create ACF options page under custom post type menu
+ *
+ * @since 1.0.0
+ */
+if ( function_exists( 'acf_add_options_sub_page' ) ){
+  acf_add_options_sub_page(array(
+    'title'      => 'Slaideri sätted',
+    'parent'     => 'edit.php?post_type=slaidid',
+    'capability' => 'manage_options' // or edit_posts
+  ));
+}
+
 
 
 ?>
@@ -54,16 +67,19 @@ add_action( 'init', 'slaidirubriik_taxonomy' );
 define( 'EW_URL', plugins_url( '', __FILE__ ) );
 define( 'EW_DIR', plugin_dir_path( __FILE__ ) );
 
-include( EW_DIR. 'slider_template.php');
-include( EW_DIR. 'acf-fields.php');
+
 
 
 wp_enqueue_style( 'owlcarouselcss', EW_URL.'/owl-carousel/owl.carousel.min.css');
 wp_enqueue_style( 'owlthemecss', EW_URL .  '/owl-carousel/owl.theme.default.css');
+wp_enqueue_style( 'defaulcss', EW_URL .  '/css/ew-default.css');
 
 wp_enqueue_script( 'jquery' );
 wp_enqueue_script( 'owljs', EW_URL .  '/owl-carousel/owl.carousel.min.js' );
-wp_enqueue_script( 'owl-script-js', EW_URL . '/owl-carousel/owl.script.js');
+/*wp_enqueue_script( 'owl-script-js', EW_URL . '/owl-carousel/owl.script.js');
+*/
 
+include( EW_DIR. 'slider_template.php');
+include( EW_DIR. 'acf-fields.php');
 
 ?>

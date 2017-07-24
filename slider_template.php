@@ -1,50 +1,105 @@
 
 <?php  
 
-
-
 function ew_slider_shortcode( $atts, $content = null ) {
 
-$args = array(
-  'post_type' => 'slaidid',
-  'posts_per_page' => 10,
-  'orderby'=>'post_date',
-  'order'=>'DESC'
-  ); ?>
+  $args = array(
+    'post_type' => 'slaidid',
+    'posts_per_page' => 10,
+    'orderby'=>'post_date',
+    'order'=>'DESC'
+    ); ?>
 
-<?php 
+  <?php 
 
 // The Query
-$the_query = new WP_Query( $args ); ?>
+  $the_query = new WP_Query( $args ); ?>
 
-<div class="slider-container owl-carousel">
+  <div class="vx-slider owl-theme slider-container owl-carousel" data-speed="<?php the_field('slaidi_vahetamise_kiirus', 'option'); ?>"  data-dots="<?php the_field('luba_slaidivahetus_nupud', 'option'); ?>" data-arrows="<?php the_field('luba_slaidivahetus_nooled', 'option'); ?>">
   <?php // The Loop
   if ( $the_query->have_posts() ) {
 
     while ( $the_query->have_posts() ) {
       $the_query->the_post();  ?>
 
-      <div class="item owl-img full-width" style="background-image: url('<?php the_field("pilt");?>');"></div>
-      
 
-
-      <?php // var_dump(get_fields()); ?>
-
-
-
-
-      <?php } } else {
-    // no posts found
-      }  ?>
+      <div class="item owl-img full-width" style="background-image: url('<?php the_field("pilt");?>');
+       <?php if(get_field("pildi_joondus")) { ?> background-position: <?php  the_field("pildi_joondus"); ?> ; <?php } ?>
+        <?php if(get_field("slaideri_korgus", "option")) { ?> padding-bottom: <?php  the_field("slaideri_korgus","option");?>%; <?php } ?>   
+       ">
+       <div class="description absolute <?php if(get_field('teksti_joondus')) { the_field('teksti_joondus'); } ?>">
+        <div class="inner"> 
+        <?php if(get_field('tekst_pildil')) {
+          the_field('tekst_pildil');
+        } ?>
+      </div>
     </div>
-
-    <?php
-    /* Restore original Post Data */
-    wp_reset_postdata(); ?>
-
-    <?php } ?>
+  </div>
 
 
-    <?php add_shortcode( 'ew_slider', 'ew_slider_shortcode' ); ?>
+
+
+  <?php // var_dump(get_fields()); ?>
+
+
+
+
+  <?php } } else {
+    // no posts found
+  }  ?>
+</div>
+
+<?php
+/* Restore original Post Data */
+wp_reset_postdata(); ?>
+
+<?php } ?>
+
+
+<?php  function start_slider() { ?>
+
+<script>  
+jQuery(document).ready(function($) {
+
+var owlSlider = $('.owl-carousel');
+var slideSpeed = $(owlSlider).attr('data-speed');
+var slideDots = $(owlSlider).attr('data-dots');
+var slideArrows = $(owlSlider).attr('data-arrows');
+
+$(owlSlider).owlCarousel({
+
+    /*items: 1,*/
+    autoplay: true,
+    loop: true,
+    singleItem:true,
+    autoplayTimeout: slideSpeed == "" ? "10000" : slideSpeed,
+    /*slideSpeed : 300,*/
+    items:1,
+    paginationSpeed : 400,
+    autoPlay : 3000,
+    stopOnHover : true,
+    nav: slideArrows == "" ? false : true,
+    dots: slideDots == "" ? false : true,
+/*  paginationSpeed : 1000,
+    goToFirstSpeed : 2000,*/
+    autoHeight : true,
+    autoPlay : true,
+    singleItem:true,
+    animateOut: 'fadeOut',
+    animateIn: 'fadeIn'
+
+});
+});
+</script>
+
+<?php 
+}
+add_action( 'wp_footer', 'start_slider' ); ?>
+
+<?php add_shortcode( 'ew_slider', 'ew_slider_shortcode' ); ?>
+
+
+
+
 
 
