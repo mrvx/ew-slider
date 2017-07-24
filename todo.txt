@@ -1,8 +1,1 @@
-* mingi css ka panna pildi kõrgustega.
-* tegelt on vaja teha config page lehe ka selle jaoks, või panna mingi number srotcode sisse.
-* dots - ei tööta
-* teksti lisamine template panna
-* piltide joondamine
-* jne jne
-* jne jne
-* veel midgai
+* lisada animated.css pluginasse sisse
