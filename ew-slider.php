@@ -78,6 +78,6 @@ wp_enqueue_script( 'jquery' );
 wp_enqueue_script( 'owljs', EW_URL .  '/owl-carousel/owl.carousel.min.js' );
 
 include( EW_DIR. 'slider_template.php');
-//include( EW_DIR. 'acf-fields.php');
+include( EW_DIR. 'acf-fields.php');
 
 ?>
