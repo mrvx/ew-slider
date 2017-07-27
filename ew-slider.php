@@ -76,10 +76,8 @@ wp_enqueue_style( 'defaulcss', EW_URL .  '/css/ew-default.css');
 
 wp_enqueue_script( 'jquery' );
 wp_enqueue_script( 'owljs', EW_URL .  '/owl-carousel/owl.carousel.min.js' );
-/*wp_enqueue_script( 'owl-script-js', EW_URL . '/owl-carousel/owl.script.js');
-*/
 
 include( EW_DIR. 'slider_template.php');
-include( EW_DIR. 'acf-fields.php');
+//include( EW_DIR. 'acf-fields.php');
 
 ?>

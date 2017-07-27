@@ -22,81 +22,89 @@ function ew_slider_shortcode( $atts, $content = null ) {
     while ( $the_query->have_posts() ) {
       $the_query->the_post();  ?>
 
-
-      <div class="item owl-img full-width" style="background-image: url('<?php the_field("pilt");?>');
-       <?php if(get_field("pildi_joondus")) { ?> background-position: <?php  the_field("pildi_joondus"); ?> ; <?php } ?>
-        <?php if(get_field("slaideri_korgus", "option")) { ?> padding-bottom: <?php  the_field("slaideri_korgus","option");?>%; <?php } ?>   
-       ">
-       <div class="description absolute <?php if(get_field('teksti_joondus')) { the_field('teksti_joondus'); } ?>">
-        <div class="inner"> 
-        <?php if(get_field('tekst_pildil')) {
-          the_field('tekst_pildil');
-        } ?>
+      <div class="item">
+        <div class="owl-img full-width" style="background-image: url('<?php the_field("pilt");?>');
+         <?php if(get_field("pildi_joondus")) { ?> background-position: <?php  the_field("pildi_joondus"); ?> ; <?php } ?>
+         <?php if(get_field("slaideri_korgus", "option")) { ?> padding-bottom: <?php  the_field("slaideri_korgus","option");?>%; <?php } ?>   
+         ">
+         <div class="overlay none on-<?php if(get_field("pildi_joondus")){?><?php the_field("labipaistev_kiht");} ?>" style="
+           <?php if(get_field("labipaistva_kihi_varv")) { ?> background-color: <?php the_field("labipaistva_kihi_varv"); ?> ; <?php } ?> 
+           <?php if(get_field("labipaistvus")) { ?> opacity: <?php the_field("labipaistvus"); ?> ; <?php } ?> 
+           "></div>
+           <div class="descWrapper" style="
+           <?php if(get_field("teksti_ala_laius", "option")) { ?> max-width: <?php  the_field("teksti_ala_laius","option");?>px; <?php } ?> 
+           ">
+             <div class="description absolute <?php if(get_field('teksti_joondus')) { the_field('teksti_joondus'); } ?>">
+              <div class="inner"> 
+                <?php if(get_field('tekst_pildil')) {
+                  the_field('tekst_pildil');
+                } ?>
+              </div>
+            </div>
+          </div>
+        </div>
       </div>
-    </div>
-  </div>
+
+
+
+      <?php // var_dump(get_fields()); ?>
 
 
 
 
-  <?php // var_dump(get_fields()); ?>
-
-
-
-
-  <?php } } else {
+      <?php } } else {
     // no posts found
-  }  ?>
-</div>
+      }  ?>
+    </div>
 
-<?php
-/* Restore original Post Data */
-wp_reset_postdata(); ?>
+    <?php
+    /* Restore original Post Data */
+    wp_reset_postdata(); ?>
 
-<?php } ?>
+    <?php } ?>
 
 
-<?php  function start_slider() { ?>
+    <?php  function start_slider() { ?>
 
-<script>  
-jQuery(document).ready(function($) {
+    <script>  
+      jQuery(document).ready(function($) {
 
-var owlSlider = $('.owl-carousel');
-var slideSpeed = $(owlSlider).attr('data-speed');
-var slideDots = $(owlSlider).attr('data-dots');
-var slideArrows = $(owlSlider).attr('data-arrows');
+        var owlSlider = $('.owl-carousel');
+        var slideSpeed = $(owlSlider).attr('data-speed');
+        var slideDots = $(owlSlider).attr('data-dots');
+        var slideArrows = $(owlSlider).attr('data-arrows');
 
-$(owlSlider).owlCarousel({
+        $(owlSlider).owlCarousel({
 
-    /*items: 1,*/
-    autoplay: true,
-    loop: true,
-    singleItem:true,
-    autoplayTimeout: slideSpeed == "" ? "10000" : slideSpeed,
-    /*slideSpeed : 300,*/
-    items:1,
-    paginationSpeed : 400,
-    autoPlay : 3000,
-    stopOnHover : true,
-    nav: slideArrows == "" ? false : true,
-    dots: slideDots == "" ? false : true,
+          /*items: 1,*/
+          autoplay: true,
+          loop: true,
+          singleItem:true,
+          autoplayTimeout: slideSpeed == "" ? "10000" : slideSpeed,
+          /*slideSpeed : 300,*/
+          items:1,
+          paginationSpeed : 400,
+          autoPlay : 3000,
+          stopOnHover : true,
+          nav: slideArrows == "" ? false : true,
+          dots: slideDots == "" ? false : true,
 /*  paginationSpeed : 1000,
-    goToFirstSpeed : 2000,*/
-    autoHeight : true,
-    autoPlay : true,
-    singleItem:true,
-    animateOut: 'fadeOut',
-    animateIn: 'fadeIn'
+goToFirstSpeed : 2000,*/
+autoHeight : true,
+autoPlay : true,
+singleItem:true,
+animateOut: 'fadeOut',
+animateIn: 'fadeIn'
 
 });
-});
-</script>
+      });
+    </script>
 
-<?php 
-}
-add_action( 'wp_footer', 'start_slider' ); ?>
+    <?php 
+  }
+  add_action( 'wp_footer', 'start_slider' ); ?>
 
-<?php add_shortcode( 'ew_slider', 'ew_slider_shortcode' ); ?>
+  <?php add_shortcode( 'ew_slider', 'ew_slider_shortcode' ); ?>
 
 
 
