@@ -1,6 +1,5 @@
 <?php 
 
-
 if( function_exists('acf_add_local_field_group') ):
 
 acf_add_local_field_group(array (
@@ -65,6 +64,53 @@ acf_add_local_field_group(array (
 			'toolbar' => 'basic',
 			'media_upload' => 1,
 			'delay' => 0,
+		),
+		array (
+			'key' => 'field_5a299d798e430',
+			'label' => 'Slaidi URL link',
+			'name' => 'slaidi_link',
+			'type' => 'text',
+			'instructions' => '',
+			'required' => 0,
+			'conditional_logic' => 0,
+			'wrapper' => array (
+				'width' => '50',
+				'class' => '',
+				'id' => '',
+			),
+			'default_value' => '',
+			'placeholder' => '',
+			'prepend' => '',
+			'append' => '',
+			'maxlength' => '',
+		),
+		array (
+			'key' => 'field_5a29a1ae467ab',
+			'label' => 'Sihtkoht',
+			'name' => 'sihtkoht',
+			'type' => 'select',
+			'instructions' => '',
+			'required' => 0,
+			'conditional_logic' => 0,
+			'wrapper' => array (
+				'width' => '50',
+				'class' => '',
+				'id' => '',
+			),
+			'choices' => array (
+				'_self' => 'Samas aknas',
+				'_blank' => 'Uues aknas',
+				'_parent' => 'Ülemises aknas',
+				'_top' => 'Uues täisaknas',
+			),
+			'default_value' => array (
+			),
+			'allow_null' => 0,
+			'multiple' => 0,
+			'ui' => 0,
+			'ajax' => 0,
+			'return_format' => 'value',
+			'placeholder' => '',
 		),
 		array (
 			'key' => 'field_597604d05d19e',
