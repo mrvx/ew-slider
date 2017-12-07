@@ -58,12 +58,6 @@ if ( function_exists( 'acf_add_options_sub_page' ) ){
   ));
 }
 
-
-
-?>
-
-<?php
-
 define( 'EW_URL', plugins_url( '', __FILE__ ) );
 define( 'EW_DIR', plugin_dir_path( __FILE__ ) );
 
