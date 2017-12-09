@@ -98,26 +98,26 @@ display: block;
 display: none;
 }
 
-.vx-slider .descWrapper .description .rightbottom {
+.vx-slider .descWrapper .description.rightbottom {
     right: 0 !important;
     bottom: 0 !important;
 }
-.vx-slider .descWrapper .description .leftbottom {
+.vx-slider .descWrapper .description.leftbottom {
     left: 0 !important;
     bottom: 0 !important;
 }
 
-.vx-slider .descWrapper .description .lefttop {
+.vx-slider .descWrapper .description.lefttop {
     left: 0 !important;
     top: 0 !important;
 }
 
-.vx-slider .descWrapper .description .righttop {
+.vx-slider .descWrapper .description.righttop {
     right: 0 !important;
     top: 0 !important;
 }
 
-.vx-slider .descWrapper .description .centerright {
+.vx-slider .descWrapper .description.centerright {
      
     right: 0 !important;
     top: 50% !important;
@@ -127,7 +127,7 @@ display: none;
     display: inline-block;
     margin-left: auto;
 }
-.vx-slider .descWrapper .description .centerleft {
+.vx-slider .descWrapper .description.centerleft {
      
     left: 0 !important;
     top: 50% !important;
@@ -137,7 +137,7 @@ display: none;
     display: inline-block;
     margin-right: auto;
 }
-.vx-slider .descWrapper .description .centercenter {
+.vx-slider .descWrapper .description.centercenter {
     left: 0 !important;
     right: 0 !important;
     top: 50% !important;
