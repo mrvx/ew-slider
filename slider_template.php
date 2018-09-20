@@ -10,9 +10,9 @@ $args = array(
 // The Query
 $the_query = new WP_Query( $args ); ?>
 <div class="vx-slider owl-theme slider-container owl-carousel" data-speed="<?php the_field('slaidi_vahetamise_kiirus', 'option'); ?>"  data-dots="<?php the_field('luba_slaidivahetus_nupud', 'option'); ?>" data-arrows="<?php the_field('luba_slaidivahetus_nooled', 'option'); ?>">
-    <?php if (get_field('taustapilt')) { ?>
+    <?php if (get_field("taustapilt", "option")) { ?>
 
-        <div class="one--bg-img" style="background-image: url('<?php the_field("taustapilt");?>');">
+        <div class="one--bg-img" style="background-image: url('<?php the_field("taustapilt", "option");?>');">
 
 
     <?php } ?>
@@ -22,6 +22,7 @@ $the_query = new WP_Query( $args ); ?>
     $the_query->the_post();  ?>
     <?php if (get_field("slaidi_link")) { ?>
     <a href="<?php the_field('slaidi_link') ?>" target="<?php the_field('sihtkoht'); ?>" class="item link pointer">
+
         <?php } else { ?>
         <div class="item">
             <?php } ?>
