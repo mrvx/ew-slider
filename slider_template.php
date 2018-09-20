@@ -9,8 +9,11 @@ $args = array(
 <?php
 // The Query
 $the_query = new WP_Query( $args ); ?>
+    <div class="outer-vx relative">
 	<?php if (get_field("taustapilt", "option")) { ?>
-        <div class="one--bg-img" style="background-image: url('<?php the_field("taustapilt", "option");?>');">
+        <div class="one--bg-img absolute" style="background-image: url('<?php the_field("taustapilt", "option");?>');
+		<?php if(get_field("slaideri_korgus", "option")) { ?> padding-bottom: <?php  the_field("slaideri_korgus","option");?>%; <?php } ?>
+                ">
 	<?php } ?>
 <div class="vx-slider owl-theme slider-container owl-carousel" data-speed="<?php the_field('slaidi_vahetamise_kiirus', 'option'); ?>"  data-dots="<?php the_field('luba_slaidivahetus_nupud', 'option'); ?>" data-arrows="<?php the_field('luba_slaidivahetus_nooled', 'option'); ?>">
 
@@ -59,6 +62,7 @@ $the_query = new WP_Query( $args ); ?>
 	<?php if (get_field('taustapilt')) { ?>
         </div>
 	<?php } ?>
+    </div>
 <?php
 /* Restore original Post Data */
 wp_reset_postdata(); ?>
